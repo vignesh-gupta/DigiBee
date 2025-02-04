@@ -1,15 +1,13 @@
 import Image from "next/image";
 import ResetPassword from "../_component/ResetPassword";
+import { PagePropsWithSearchParams } from "@/lib/types";
 
-interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
-}
 
-const ResetPasswordPage = ({ searchParams }: PageProps) => {
-  const token = searchParams.token;
-  const toEmail = searchParams.to;
+const ResetPasswordPage = async ({ searchParams }: PagePropsWithSearchParams) => {
+
+  const searchParamsData = await searchParams;
+  const token = searchParamsData.token;
+  const toEmail = searchParamsData.to;
 
   return (
     <>

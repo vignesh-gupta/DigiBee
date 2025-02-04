@@ -12,7 +12,7 @@ import UserNav from "./UserNav";
 import { ThemeSwitch } from "../ui/theme-switch";
 
 const Navbar = async () => {
-  const nextCookies = cookies();
+  const nextCookies = await cookies();
 
   const { user } = await getServerSideUser(nextCookies);
 
